@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body,
+:root {
+  height: 100%;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -73,5 +78,9 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  .bg-gradient {
+    background-image: linear-gradient(to bottom, #051937, #004978, #0080a0, #00b89c, #12eb70);
   }
 }
