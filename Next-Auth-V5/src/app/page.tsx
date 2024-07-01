@@ -1,4 +1,4 @@
-import { LoginButton } from "@/Components/auth/login-button";
+import LoginButton from "@/Components/LoginButton";
 import { Button } from "@/Components/ui/button";
 import { Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";

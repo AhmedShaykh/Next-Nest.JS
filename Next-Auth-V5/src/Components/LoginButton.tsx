@@ -1,14 +1,13 @@
 "use client";
-import { ReactNode } from "react";
 import { useRouter } from "next/navigation";
 
 interface LoginButtonProps {
-    children: ReactNode;
+    children: React.ReactNode;
     mode?: "modal" | "redirect";
     asChild?: boolean;
 };
 
-export const LoginButton = ({
+const LoginButton = ({
     children,
     mode = "redirect",
     asChild
@@ -37,3 +36,5 @@ export const LoginButton = ({
         </span>
     )
 };
+
+export default LoginButton;
