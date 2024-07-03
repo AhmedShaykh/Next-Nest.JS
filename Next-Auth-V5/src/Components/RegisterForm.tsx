@@ -11,7 +11,7 @@ import {
     FormLabel,
     FormMessage
 } from "@/Components/ui/form";
-import { RegisterSchema } from "@/schemas";
+import { RegisterSchema } from "@/lib/schemas";
 import { register } from "@/actions/register";
 import FormSuccess from "./FormSuccess";
 import FormError from "./FormError";
