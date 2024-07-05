@@ -1,14 +1,27 @@
 "use client";
+import { DEFAULT_LOGIN_REDIRECT } from "@/lib/routes";
 import { Button } from "@/Components/ui/button";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import { signIn } from "next-auth/react";
 
 const Social = () => {
+
+    const onClick = (provider: "google" | "github") => {
+
+        signIn(provider, {
+
+            callbackUrl: DEFAULT_LOGIN_REDIRECT
+
+        });
+
+    };
+
     return (
         <div className="flex items-center w-full gap-x-2">
             <Button
                 className="w-full"
-                onClick={() => { }}
+                onClick={() => onClick("google")}
                 variant="outline"
                 size="lg"
             >
@@ -17,7 +30,7 @@ const Social = () => {
 
             <Button
                 className="w-full"
-                onClick={() => { }}
+                onClick={() => onClick("github")}
                 variant="outline"
                 size="lg"
             >
