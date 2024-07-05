@@ -1,1 +1,0 @@
-# Full Stack Authentication Next Nest.JS!
