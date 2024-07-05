@@ -21,7 +21,7 @@ export async function register(signUp: any) {
 
     try {
 
-        const response = await axios.post(`${baseURL}/api/users/register`, signUp);
+        const response = await axios.post(`${baseURL}/api/register`, signUp);
 
         return response.data;
 
@@ -36,7 +36,7 @@ export async function loginUser(login: any) {
 
     try {
 
-        const response = await axios.post(`${baseURL}/api/users/login`, login);
+        const response = await axios.post(`${baseURL}/api/login`, login);
 
         return response.data;
 
@@ -45,4 +45,20 @@ export async function loginUser(login: any) {
         console.log("Error");
 
     }
+};
+
+export async function getUserDetails() {
+
+    try {
+
+        const response = await axios.get(`${baseURL}/api/auth/user`);
+
+        return response.data;
+
+    } catch (error) {
+
+        return error;
+
+    }
+
 };
