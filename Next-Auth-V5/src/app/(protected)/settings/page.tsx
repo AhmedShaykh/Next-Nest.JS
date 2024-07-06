@@ -1,6 +1,8 @@
+import React from "react";
 import { Button } from "@/Components/ui/button";
 import { auth, signOut } from "@/lib/auth";
-import React from "react";
+
+export const revalidate = 1;
 
 const SettingsPage = async () => {
 
