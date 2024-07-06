@@ -1,4 +1,5 @@
 "use server";
+import { generateVerificationToken } from "@/data/token";
 import { RegisterSchema } from "@/lib/schemas";
 import { getUserByEmail } from "@/data/user";
 import { db } from "@/lib/db";
@@ -26,6 +27,8 @@ export const register = async (values: z.infer<typeof RegisterSchema>) => {
             password: hashedPassword
         }
     });
+
+    const verificationToken = await generateVerificationToken(email);
 
     return { success: "User Created!" };
 
