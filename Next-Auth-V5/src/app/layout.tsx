@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@/Components/ThemeProvider";
+import { Toaster } from "@/Components/ui/sonner";
 import Session from "@/Components/Session";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
@@ -31,6 +32,7 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <Toaster />
             {children}
           </ThemeProvider>
         </body>
