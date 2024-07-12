@@ -33,6 +33,8 @@ const LoginForm = () => {
 
     const searchParams = useSearchParams();
 
+    const callBackUrl = searchParams.get("callBackUrl");
+
     const urlError = searchParams.get("error") === "OAuthAccountNotLinked"
         ? "Email Already In Use With Different Provider!"
         : "";
@@ -51,7 +53,7 @@ const LoginForm = () => {
         setSuccess("");
 
         startTransaction(() => {
-            login(values)
+            login(values, callBackUrl)
                 .then((data) => {
                     if (data?.error) {
                         form.reset();

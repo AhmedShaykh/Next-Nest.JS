@@ -25,7 +25,7 @@ const UserButton = () => {
                 <Avatar>
                     <AvatarImage src={user?.image || ""} />
 
-                    <AvatarFallback className="bg-black">
+                    <AvatarFallback className="bg-secondary">
                         <FaUser />
                     </AvatarFallback>
                 </Avatar>

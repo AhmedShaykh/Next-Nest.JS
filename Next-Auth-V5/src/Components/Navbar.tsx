@@ -10,7 +10,7 @@ const Navbar = () => {
 
     return (
         <div
-            className="bg-secondary flex justify-between items-center p-4 rounded-xl w-[600px] shadow-sm"
+            className="bg-black flex justify-between items-center p-4 rounded-xl w-[600px] shadow-sm mt-12"
         >
             <div className="flex gap-x-2">
                 <Button

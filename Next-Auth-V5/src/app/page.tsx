@@ -24,7 +24,7 @@ const Home = () => {
                 </p>
 
                 <div>
-                    <LoginButton>
+                    <LoginButton mode="modal" asChild>
                         <Button size="lg" className="font-semibold">
                             Sign In
                         </Button>
