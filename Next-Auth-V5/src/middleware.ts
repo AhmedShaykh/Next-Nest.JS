@@ -1,3 +1,4 @@
+import { NextResponse } from "next/server";
 import authConfig from "./lib/auth.config";
 import {
     apiAuthPrefix,
@@ -31,7 +32,7 @@ export default auth((req): any => {
 
         if (isLoggedIn) {
 
-            return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
+            return NextResponse.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
 
         }
 
@@ -51,7 +52,7 @@ export default auth((req): any => {
 
         const encodedCallBackUrl = encodeURIComponent(callBackUrl);
 
-        return Response.redirect(new URL(
+        return NextResponse.redirect(new URL(
             `/auth/login?callBackUrl=${encodedCallBackUrl}`,
             nextUrl
         ));
@@ -63,5 +64,5 @@ export default auth((req): any => {
 });
 
 export const config = {
-    matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"]
+    matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"]
 };
