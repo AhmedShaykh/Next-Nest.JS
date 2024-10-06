@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 import axios from "axios";
 
 const Main = () => {
@@ -16,6 +17,8 @@ const Main = () => {
     }, [])
 
     const FetchProfile = async () => {
+
+        router.refresh();
 
         const response = await axios(`http://localhost:8080/api/users/me`, {
             headers: {
@@ -42,7 +45,11 @@ const Main = () => {
 
         localStorage.removeItem("token");
 
-        router.push("/login", { scroll: false });
+        Cookies.remove("token");
+
+        router.push("/login");
+
+        router.refresh();
 
     };
 
